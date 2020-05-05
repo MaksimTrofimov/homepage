@@ -62,8 +62,8 @@
                     <div class="divider"></div>
                   </div>
                   <div class="sixteen wide column">
-                    <h2>Résumé</h2>
-                      <p>— Hello! I am a developer with 2+ years experience in PHP. I am a loyal and communicative person and can easily work as a team or alone in a project.</p>
+                    <h2 class="m-lang" m-lang-key='resume'></h2>
+                      <p class="m-lang" m-lang-key='resume_text'></p>
                   </div>
                 </div>
               </div>
@@ -75,15 +75,15 @@
             </div>
             <div class="row">
               <div class="ten wide column">
-                <h3>Experience</h3>
-                <h6>Recent</h6>
+                <h3 class="m-lang" m-lang-key='experience'>experience</h3>
+                <h6 class="m-lang" m-lang-key='recent'>Recent</h6>
                 <ul class="timeline">
                   <li>
                     <p><em>20<sup>th</sup> July 2017 - 29<sup>th</sup>February 2020</em></p>
                     <p><strong>PHP Developer</strong> at <strong>Soft Company</strong></p>
                   <ul>
-                      <li>Participating in the entire application lifecycle, focusing on coding and debugging</li>
-                      <li>Troubleshooting and debug applications at all stages</li>
+                      <li class="m-lang">Participating in the entire application lifecycle, focusing on coding and debugging</li>
+                      <li class="m-lang">Troubleshooting and debug applications at all stages</li>
                       <li>Collaborating with Front-end developers to integrate user-facing elements with server side logic</li>
                       <li>Support of existing projects</li>
                       <li>PHP, Kohana, HTML, CSS, JS, jQuery, Git, Windows</li>
@@ -93,7 +93,7 @@
               <div class="six wide column">
                 <section>
                   <h3>Languages</h3>
-                  <p class="tags small"><a href="/uk-ua" hreflang="uk" rel="alternate" class="language" lang="uk">&#x1f1fa;&#x1f1e6; <span>УКРАЇНСЬКА</span></a> <a href="/ru-ru" hreflang="ru" rel="alternate" class="language" lang="ru">&#x1f1f7;&#x1f1fa; <span>РУССКИЙ</span></a> <span class="language" lang="en">&#x1f1fa;&#x1f1f8; ENGLISH</span></p>
+                  <p class="tags small"><a id="uk-ua" onClick="chooseLang(this.id)" href="/uk-ua" hreflang="uk" rel="alternate" class="language" lang="uk">&#x1f1fa;&#x1f1e6; <span>УКРАЇНСЬКА</span></a> <a id="ru-ru" onClick="chooseLang(this.id)" href="/ru-ru" hreflang="ru" rel="alternate" class="language" lang="ru">&#x1f1f7;&#x1f1fa; <span>РУССКИЙ</span></a> <span class="language" lang="en" id="en-us" onClick="chooseLang(this.id)">&#x1f1fa;&#x1f1f8; ENGLISH</span></p>
                 </section>
                 <section>
                   <h3>Skills</h3>
@@ -149,6 +149,92 @@
       </article>
     </main>
     <footer></footer>
-    <script></script>
+    <script>
+
+      function Lang(transl) {
+        let currentLang;
+        let translations = transl;
+        let collectionElem;
+        let link = 'blue';
+        let linkActive = 'black';
+
+        function init() {
+          run('en-us');
+        }
+
+        init();
+
+        function checkLang (lang) {
+          return currentLang != lang ? true : false;
+        }
+
+        function findClass() {
+          collectionElem = document.getElementsByClassName('m-lang');
+        }
+
+        function langKey(elem) {
+          return elem.getAttribute('m-lang-key');
+        }
+
+        function keyExists(key) {console.log(translations);
+           return typeof(translations[currentLang][key]) !== "undefined" ? true : false;
+        }
+
+        function replaceText(elem, key) {
+          if (keyExists(key)) {
+            elem.innerHTML = translations[currentLang][key];
+            elem.style.color = "black";
+            elem.classList.remove('lang.error');
+          } else {
+            elem.textContent = 'lang.error.' + currentLang + '.' + key;
+            elem.classList.add('lang.error');
+            elem.setAttribute('style', 'fontSize:16px; color:red');
+          }
+        }
+
+        function style()
+        {
+          for (let key in translations) {
+            let active = key == currentLang ? true : false;
+            document.getElementById(key).style.color = active == true ? linkActive : link;
+          }
+        }
+
+        function run(lang) {
+          if (checkLang(lang)) {
+            currentLang = lang;
+            findClass();
+            for (var i = 0; i < collectionElem.length; i++) {
+              let key = langKey(collectionElem[i]);
+              replaceText(collectionElem[i], key);
+            }
+            style();
+          }
+        };
+
+        this.change = function(lang) {
+          run(lang);
+        }
+
+      }
+
+      let test = {
+        'en-us':{
+          'resume' :'Résumé', 'resume_text':'— Hello! I am a developer with 2+ years experience in PHP. I am a loyal and communicative person and can easily work as a team or alone in a project.', 'experience':''
+        },
+        'ru-ru':{
+          'resume' :'Резюме', 'experience':'Опыт'
+        },
+        'uk-ua':{
+          'resume' :'Резюме', 'experience':'Досвід'
+        }
+      };
+
+      let lang = new Lang(test);
+      function chooseLang(id) {
+        event.preventDefault();
+        lang.change(id);
+      }
+    </script>
   </body>
 </html>
