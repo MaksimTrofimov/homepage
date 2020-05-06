@@ -160,6 +160,7 @@
         let linkActive = 'black';
 
         function init() {
+          collectionElem = findClass();
           run('en-us');
         }
 
@@ -170,7 +171,7 @@
         }
 
         function findClass() {
-          collectionElem = document.getElementsByClassName(className);
+          return document.getElementsByClassName(className);
         }
 
         function langKey(elem) {
@@ -204,7 +205,6 @@
         function run(lang) {
           if (checkLang(lang)) {
             currentLang = lang;
-            findClass();
             for (var i = 0; i < collectionElem.length; i++) {
               let key = langKey(collectionElem[i]);
               replaceText(collectionElem[i], key);
