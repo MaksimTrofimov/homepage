@@ -93,14 +93,14 @@
               <div class="six wide column">
                 <section>
                   <h3 class="m-lang" m-lang-key='languages'>Languages</h3>
-                  <p class="tags small"><a id="uk-ua" onClick="chooseLang(this.id)" href="/uk-ua" hreflang="uk" rel="alternate" class="language" lang="uk">&#x1f1fa;&#x1f1e6; <span class="m-lang" m-lang-key='lang-uk'>УКРАЇНСЬКА</span></a> <a id="ru-ru" onClick="chooseLang(this.id)" href="/ru-ru" hreflang="ru" rel="alternate" class="language" lang="ru">&#x1f1f7;&#x1f1fa; <span>РУССКИЙ</span></a> <span class="language" lang="en" id="en-us" onClick="chooseLang(this.id)">&#x1f1fa;&#x1f1f8; ENGLISH</span></p>
+                  <p class="tags small"><a id="uk-ua" onClick="chooseLang(this.id)" href="/uk-ua" hreflang="uk" rel="alternate" class="language" lang="uk">&#x1f1fa;&#x1f1e6; <span class="m-lang" m-lang-key='lang-uk'>УКРАЇНСЬКА</span></a> <a id="ru-ru" onClick="chooseLang(this.id)" href="/ru-ru" hreflang="ru" rel="alternate" class="language" lang="ru">&#x1f1f7;&#x1f1fa; <span class="m-lang" m-lang-key='lang-ru'>РУССКИЙ</span></a> <span class="language m-lang" m-lang-key='lang-en' lang="en" id="en-us" onClick="chooseLang(this.id)">ENGLISH</span></p>
                 </section>
                 <section>
                   <h3 class="m-lang" m-lang-key='skills'>Skills</h3>
                   <p class="tags small m-lang"m-lang-key='skills-text'>PHP KOHANA HTML CSS JS JQUERY WINDOWS LINUX GIT</p>
                 </section>
                 <section>
-                  <h3 class="tags small m-lang" m-lang-key='character'>Character</h3>
+                  <h3 m-lang-key='character'>Character</h3>
                   <p class="tags small m-lang" m-lang-key='character-text'>OPEN TRUTH FAIRNESS PURPOSE DECISIVE GOOD RESPONSIBLE ACTIVE SELF-CRITICAL SELF-SECRET</p>
                 </section>
                 <section>
@@ -236,15 +236,15 @@
           'languages':'Languages',
           'lang-uk':'UKRAINIAN',
           'lang-ru':'RUSSIAN',
-          'lang-en':'ENGLISH',
+          'lang-en':'&#x1f1fa;&#x1f1f8; ENGLISH',
           'skills':'Skills',
           'skills-text':'PHP KOHANA HTML CSS JS JQUERY GIT WINDOWS LINUX',
           'character':'Character',
-          'character-text':'OPEN TRUTH FAIRNESS PURPOSE DECISIVE GOOD RESPONSIBLE ACTIVE SELF-CRITICAL SELF-SECRET',
+          'character-text':'OPEN TRUTH FAIRNESS PURPOSE DECISIVE GOOD RESPONSIBLE ACTIVE SELF-CRITICAL',
           'likes':'Likes',
           'likes-text':'LIFE FAMILY SWEET CATS FRIENDSHIP <a href="https://www.youtube.com/watch?v=NuKREeAnm1s" rel="external">HUMOR</a> SPRING PROGRAMMING READ TRAINING FANTASY SCIENCE NATURE MUSIC TRAVEL MY CITY KHARKOV PEOPLE SUN BEACH SEA <a href="https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe" rel="external">MARVEL</a>',
-          'dislikes':'Dislikes😞',
-          'dislikes-text':'COLD, INDIFFERENCE, TIES, DENTISTS, LIES',
+          'dislikes':'Dislikes',
+          'dislikes-text':'COLD INDIFFERENCE TIES DENTISTRY LIES',
           'wants':'Wants',
           'wants-text':'<span class="tag">TO STUDY</span><span class="tag">DEVELOP</span><span class="tag">TO BE A HEALTHY AND STRONG PERSON</span><span class="tag">TO TRAVEL</span><span class="tag">FLY ON MARS</span><span class="tag">LIVE FOREVER</span>',
           'education':'Education',
@@ -265,16 +265,112 @@
               </li>\
               <li>\
                 <div><em>September 1999 – June 2004</em></div>\
-                <div><strong>Specialist degree in Flexible Computer Systems and Robotics at Kharkiv National University of Radio Electronics</strong></div>\
+                <div><strong>Student of the Faculty of Computer Engineering at Kharkov National University of Radio Electronics</strong></div>\
               </li>',
           'articles':'Articles',
           'articles-text':'None published <sup><em>yet</em></sup>',
         },
         'ru-ru':{
-          'resume' :'Резюме', 'experience':'Опыт'
+          'full-name':'Максим Трофимов',
+          'resume':'РЕЗЮМЕ',
+          'resume-text':'— Привет! Я PHP разрабочик с опытом более 2 лет. Я лояльный и общительный человек и могу легко работать в команде или в одиночку в проекте.',
+          'experience':'Опыт',
+          'recent':'Теперь',
+          'timeline-job1-period':'<em>20<sup>е</sup> Июня 2017 - 29<sup>е</sup>Февраля 2020</em>',
+          'timeline-job1-company':'<p><strong>PHP разрабочик</strong> в <strong>Soft Company</strong></p>',
+          'timeline-job1-description':
+              '<li>Участие во всем жизненном цикле приложения</li>\
+              <li>Устранение неполадок и отладка приложений на всех этапах</li>\
+              <li>Сотрудничество с разработчиками Front-end для интеграции элементов, ориентированных на пользователя, с логикой на стороне сервера</li>\
+              <li>Поддержка существующих проектов</li>\
+              <li>PHP, Kohana, HTML, CSS, JS, jQuery, Git, Windows</li>',
+          'languages':'Языки',
+          'lang-uk':'УКРАИНСКИЙ',
+          'lang-ru':'РУССКИЙ',
+          'lang-en':'&#x1f1fa;&#x1f1f8; АНГЛИЙСКИЙ',
+          'skills':'Навыки',
+          'skills-text':'PHP KOHANA HTML CSS JS JQUERY GIT WINDOWS LINUX',
+          'character':'Характер',
+          'character-text':'ОТКРЫТОСТЬ ПРАВДИВОСТЬ СПРАВЕДЛИВОСТЬ ЦЕЛЕУСТРЕМЛЕНОНСТЬ РЕШИТЕЛЬНОСТЬ ДОБРОТА ОТВЕТСТВЕННОСТЬ АКТИВНЫЙ САМОКРИТИЧНЫЙ',
+          'likes':'Нравится',
+          'likes-text':'ЖИЗНЬ СЛАДОСТИ КОТЫ ДРУЖБА <a href="https://www.youtube.com/watch?v=NuKREeAnm1s" rel="external">ЮМОР</a> ВЕСНА ПРОГРАММИРОВАНИЕ ЧИТАТЬ УЧИТЬСЯ ФАНТАСТИКА НАУКА ПРИРОДА МУЗЫКА ПУТЕШЕСТВИЯ МОЙ ГОРОД ХАРЬКОВ ЛЮДИ СОЛНЦЕ ПЛЯЖ МОРЕ<a href="https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe" rel="external">MARVEL</a>',
+          'dislikes':'НЕ НРАВИТСЯ',
+          'dislikes-text':'ХОЛОД, БЕЗРАЗЛИЧИЕ ГАЛСТУКИ СТОМАТОЛОГИЯ ВРАНЬЕ',
+          'wants':'ПЛАНИРУЮ',
+          'wants-text':'<span class="tag">УЧИТЬСЯ</span><span class="tag">РАЗВИВАТЬСЯ</span><span class="tag">БЫТЬ СИЛЬНЫМ И ЗДОРОВЫМ ЧЕЛОВЕКОМ</span><span class="tag">ПУТЕШЕСТВОВАТЬ</span><span class="tag">СЛЕТАТЬ НА МАРС</span><span class="tag">ЖИТЬ ВЕЧНО</span>',
+          'education':'ОБРАЗОВАНИЕ',
+          'education-timeline':
+              '<li>\
+                <div><em>Каждый день</em></div>\
+                <p class="tags bulleted">\
+                  <span class="tag"><a href="https://www.php.net/" rel="external">PHP документация</a></span>\
+                  <span class="tag"><a href="https://habr.com/" rel="external">Habr</a></span>\
+                  <span class="tag"><a href="https://stackoverflow.com/" rel="external">StackOverflow</a></span>\
+                  <span class="tag">Youtube</span>\
+                  <span class="tag">Google</span>\
+                </p>\
+              </li>\
+              <li>\
+                <div><em>Декабрь 2016 – Май 2017</em></div>\
+                <div><strong><a href="https://a-level.com.ua/" rel="external">A-Level "PHP ADVANCE" Харьков, Украина</a></strong></div>\
+              </li>\
+              <li>\
+                <div><em>Сентябрь 1999 – Июнь 2004</em></div>\
+                <div><strong>Студент факультета Компьютерной инженери в Харьковском Национальном Университете Радиоэлектроники</strong></div>\
+              </li>',
+          'articles':'Articles',
+          'articles-text':'Ни одна не опубликована<sup><em>пока что</em></sup>',
         },
         'uk-ua':{
-          'resume' :'Резюме', 'experience':'Досвід'
+          'full-name':'Макисм Трофімов',
+          'resume':'Резюме',
+          'resume-text':'— Привет! Я PHP розробник з досвідом більше 2 років. Я лояльний і  веселий чоловік і можу легко працювати в команді або в одиночку в проектах.',
+          'experience':'Досвід',
+          'recent':'Недавній',
+          'timeline-job1-period':'<em>20<sup>е</sup> Червень 2017 - 29<sup>е</sup>Лютий 2020</em>',
+          'timeline-job1-company':'<p><strong>PHP розробник</strong> у <strong>Soft Company</strong></p>',
+          'timeline-job1-description':
+              '<li>Участь у всьому життєвому циклі додату</li>\
+              <li>Пошук та усунення несправностей і налагодження додатків на всіх етапах</li>\
+              <li>Співпраця з розробниками Front-end для інтеграції елементів, орієнтованих на користувача, з логікою на стороні сервера</li>\
+              <li>Підтримка існуючих проектів</li>\
+              <li>PHP, Kohana, HTML, CSS, JS, jQuery, Git, Windows</li>',
+          'languages':'Мови',
+          'lang-uk':'УКРАЇНСЬКИЙ',
+          'lang-ru':'РОСІЙСЬКИЙ',
+          'lang-en':'&#x1f1fa;&#x1f1f8; АНГЛІЙСЬКИЙ',
+          'skills':'Вміння',
+          'skills-text':'PHP KOHANA HTML CSS JS JQUERY GIT WINDOWS LINUX',
+          'character':'Характер',
+          'character-text':'ВІДКРИТІСТЬ ПРАВДИВІСТЬ СПРАВЕДЛИВІСТЬ ЦІЛЕСПРЯМОВАНІСТЬ РІШУЧІСТЬ ДОБРОТА ВІДПОВІДАЛЬНІСТЬ АКТИВНІСТЬ',
+          'likes':'Подобається',
+          'likes-text':'ЖИТТЯ СОЛОДОЩІ КОТИ ДРУЖБА<a href="https://www.youtube.com/watch?v=NuKREeAnm1s" rel="external">ГУМОР</a> ВЕСНА ПРОГРАМУВАННЯ ЧИТАТИ ВЧИТИСЯ ФАНТАСТИКА НАУКА ПРИРОДА МУЗИКА ПОДОРОЖІ МОЄ МІСТО ХАРКІВ ЛЮДИ СОНЦЕ ПЛЯЖ МОРЕ <a href="https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe" rel="external">MARVEL</a>',
+          'dislikes':'Не подобається',
+          'dislikes-text':'ХОЛОД БАЙДУЖНІСТЬ КРАВАТКИ СТОМАТОЛОГІЯ БРЕХНЯ',
+          'wants':'Планую',
+          'wants-text':'<span class="tag">ВЧИТИСЯ</span><span class="tag">РАЗВИВАТЬСЯ</span><span class="tag">БУТИ СИЛЬНОЮ ТА ЗДРОВОЮ ЛЮДИНОЮ</span><span class="tag">ПОДОРОЖУВАТИ</span><span class="tag">ЗЛІТАТИ НА МАРС</span><span class="tag">ЖИТИ ВІЧНО</span>',
+          'education':'ОСВІТА',
+          'education-timeline':
+              '<li>\
+                <div><em>Кожен день</em></div>\
+                <p class="tags bulleted">\
+                  <span class="tag"><a href="https://www.php.net/" rel="external">PHP документація</a></span>\
+                  <span class="tag"><a href="https://habr.com/" rel="external">Habr</a></span>\
+                  <span class="tag"><a href="https://stackoverflow.com/" rel="external">StackOverflow</a></span>\
+                  <span class="tag">Youtube</span>\
+                  <span class="tag">Google</span>\
+                </p>\
+              </li>\
+              <li>\
+                <div><em>Грудень 2016 – Травень 2017</em></div>\
+                <div><strong><a href="https://a-level.com.ua/" rel="external">A-Level "PHP ADVANCE" Харків, Україна</a></strong></div>\
+              </li>\
+              <li>\
+                <div><em>Вересень 1999 – Червнь 2004</em></div>\
+                <div><strong>Студент факультету комп&#39;ютерної інженерії в Харківському національному університеті радіоелектроніки</strong></div>\
+              </li>',
+          'articles':'СТАТТІ',
+          'articles-text':'Жодна не опублікована<sup><em>поки що</em></sup>',
         }
       };
 
