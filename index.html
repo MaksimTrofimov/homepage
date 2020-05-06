@@ -93,7 +93,7 @@
               <div class="six wide column">
                 <section>
                   <h3 class="m-lang" m-lang-key='languages'>Languages</h3>
-                  <p class="tags small"><a id="uk-ua" onClick="chooseLang(this.id)" href="/uk-ua" hreflang="uk" rel="alternate" class="language" lang="uk">&#x1f1fa;&#x1f1e6; <span class="m-lang" m-lang-key='lang-uk'>УКРАЇНСЬКА</span></a> <a id="ru-ru" onClick="chooseLang(this.id)" href="/ru-ru" hreflang="ru" rel="alternate" class="language" lang="ru">&#x1f1f7;&#x1f1fa; <span class="m-lang" m-lang-key='lang-ru'>РУССКИЙ</span></a> <span class="language m-lang" m-lang-key='lang-en' lang="en" id="en-us" onClick="chooseLang(this.id)">ENGLISH</span></p>
+                  <p class="tags small"><a href="" hreflang="uk" rel="alternate" class="language" lang="uk">&#x1f1fa;&#x1f1e6; <span id="uk-ua" onClick="chooseLang(this.id)" class="m-lang" m-lang-key='lang-uk'>УКРАЇНСЬКА</span></a> <a href="" hreflang="ru" rel="alternate" class="language" lang="ru">&#x1f1f7;&#x1f1fa; <span id="ru-ru" onClick="chooseLang(this.id)" class="m-lang" m-lang-key='lang-ru'>РУССКИЙ</span></a> <a href="" hreflang="en" rel="alternate" class="language" lang="en"><span class="language m-lang" m-lang-key='lang-en' lang="en" id="en-us" onClick="chooseLang(this.id)">ENGLISH</span></a></p>
                 </section>
                 <section>
                   <h3 class="m-lang" m-lang-key='skills'>Skills</h3>
@@ -152,6 +152,7 @@
     <script>
 
       function Lang(transl) {
+        let className = 'm-lang';
         let currentLang;
         let translations = transl;
         let collectionElem;
@@ -169,21 +170,20 @@
         }
 
         function findClass() {
-          collectionElem = document.getElementsByClassName('m-lang');
+          collectionElem = document.getElementsByClassName(className);
         }
 
         function langKey(elem) {
           return elem.getAttribute('m-lang-key');
         }
 
-        function keyExists(key) {console.log(translations);
+        function keyExists(key) {
            return typeof(translations[currentLang][key]) !== "undefined" ? true : false;
         }
 
         function replaceText(elem, key) {
           if (keyExists(key)) {
             elem.innerHTML = translations[currentLang][key];
-            elem.style.color = "black";
             elem.classList.remove('lang.error');
           } else {
             elem.textContent = 'lang.error.' + currentLang + '.' + key;
@@ -196,6 +196,7 @@
         {
           for (let key in translations) {
             let active = key == currentLang ? true : false;
+            className = document.getElementById(key);
             document.getElementById(key).style.color = active == true ? linkActive : link;
           }
         }
@@ -377,6 +378,7 @@
       let lang = new Lang(test);
       function chooseLang(id) {
         event.preventDefault();
+        console.log(id);
         lang.change(id);
       }
     </script>
